@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/todo.js"></script>
+</head>
+
+<body ng-app="app">
+
+
+    <div class="tdl-holder" data-ng-controller="TodoController">
+
+        <div class="title">
+            <div>
+                <a href="index.html">
+			        <img  src="img/sign.png" alt="Back">
+			     </a>
+                <div class="article-name" tabindex="0" data-ng-repeat="post in todos| filter :{param : true}">{{ post.name }}</div>
+            </div>
+        </div>
+
+
+
+        <div class="tdl-content scroll " id="style-1">
+            <ul>
+                <li ng-repeat="post in todos | filter :{param : true} " ng-init="parentIndex = $index">
+                    <div class="content" ng-repeat="item in post.comm track by $index">
+                        <div class="img-box">
+                            <div class="btn_del"> <a data-ng-click="removeComment($index,parentIndex)">Delete</a> </div>
+                        </div>
+                        <div class="text-box">
+                            {{item}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="add-comment">
+                <input required type="text" id="input-comment" data-ng-model="commText" placeholder="New item title..." style="float:left">
+
+                <div class="add-btn fix" data-ng-click="addComment($index)" style="float:left">></div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

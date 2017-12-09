@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/todo.js"></script>
+</head>
+
+<body ng-app="app">
+
+
+    <div class="tdl-holder" data-ng-controller="TodoController">
+
+
+        <div class="title">
+            <div>
+                <a href="index.html">
+			        <img  src="img/sign.png" alt="Back">
+			     </a>
+                <div class="article-name">
+                    <div style="pading-top:10px;">Create new item</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tdl-content">
+            <div class="input">
+                <input type="text" data-ng-model="todoText" placeholder="New item title..." style="float:left">
+                <br>
+                <a class="add-btn" style="float:left" data-ng-click="addTodo()">></a>
+
+            </div>
+
+
+
+        </div>
+
+
+        <script>
+
+
+        </script>
+</body>
+
+</html>

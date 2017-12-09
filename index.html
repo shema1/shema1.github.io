@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/onload.js"></script>
+</head>
+
+<body ng-app="app">
+
+
+    <div class="tdl-holder" data-ng-controller="TodoController">
+        <div class="title">
+            <div class="main-titel">Sayer</div>
+            <div>World's most used time waster</div>
+        </div>
+        <div class="tdl-content scroll " id="style-1">
+            <ul>
+                <li data-ng-repeat="todo in todos track by $index">
+                    <div class="holder">
+                        <div class="name">
+                            <a id="col" href="articles.html" data-ng-click="selectpost($index)">{{ todo.name }}  </a></div>
+                        <div class="count"> {{todo.comm.length }}
+                        </div>
+                        <div class="block">
+                            <a data-ng-click="removeItem($index)" style="text-align:  center">Delete</a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="add">
+                        <a class="btn" href="additem.html">+</a>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
